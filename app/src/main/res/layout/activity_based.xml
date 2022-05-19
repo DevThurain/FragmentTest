@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BasedActivity">
+
+    <TextView
+        android:id="@+id/tv_static_fragment"
+        android:layout_width="wrap_content"
+        android:padding="12dp"
+        android:text="Static Fragments"
+        android:layout_height="wrap_content"/>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.thurainx.fragmenttesting.based_fragements.FirstFragment"
+        android:layout_width="match_parent"
+        android:layout_below="@id/tv_static_fragment"
+        android:layout_height="150dp" />
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.thurainx.fragmenttesting.based_fragements.SecondFragment"
+        android:layout_width="match_parent"
+        android:layout_below="@id/firstFragment"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:id="@+id/tv_dynamic_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_below="@id/secondFragment"
+        android:text="Dynamic Fragment"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerFirst"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/tv_dynamic_fragment" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerSecond"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/fragmentContainerFirst" />
+
+</RelativeLayout>
